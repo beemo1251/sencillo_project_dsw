@@ -1,3 +1,8 @@
 # sencillo_project_dsw
-Proyecto de Desarrollo de servicios web
-- Angelo gil
+Proyecto de Desarrollo de Servicios Web
+
+INTEGRANTES:
+ANGELO VICENZO LEÓN RIVERA
+LUIS EDUARDO CORDOVA ASTETE
+PAULO ROBERTO REVILLA PERLECHE
+GABRIEL ANTHONY REYES FERNÁNDEZ
