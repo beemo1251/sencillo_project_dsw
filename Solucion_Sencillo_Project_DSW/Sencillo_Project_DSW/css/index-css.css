@@ -1,3 +1,8 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
 .rectangle-1{
     position: absolute;
     width: 100%;
@@ -5,6 +10,7 @@
     left: 0px;
     top: 0px;
     background: #F0204C;
+    overflow: hidden;
 }
 
 .sencillo{
@@ -86,11 +92,13 @@ body{
     margin: 0;
     padding: 0;
     font-family: Roboto;
+    width: 100%;
 }
 
 .dropdwn{
     margin: 0 auto;
     margin-top: 62px;
+    width: 100%;
 }
 
 nav{
@@ -124,7 +132,7 @@ nav ul li a{
 }
 
 nav ul li a:hover{
-    background: rgb(180, 180, 180);;
+    background: rgb(180, 180, 180);
 }
 
 nav ul ul{
@@ -149,13 +157,21 @@ nav ul ul li {
 .slider{
     margin: auto;
     overflow: hidden;
+    width: 100%;
+    height: 82vh;
 }
 
 .slider ul{
     display: flex;
     padding: 0;
-
     animation: cambio 18s infinite alternate;
+    width: 100%;
+    height: 82vh;
+}
+
+.slider ul img {
+    width: 100%;
+    height: 100%
 }
 
 .slider li{
