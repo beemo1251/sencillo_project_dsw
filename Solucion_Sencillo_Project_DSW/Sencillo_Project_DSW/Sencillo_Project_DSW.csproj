@@ -131,10 +131,22 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="css\estilos-perfil.css" />
+    <Content Include="css\index-css.css" />
+    <Content Include="css\login.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="img\index-img\banner-1.jpg" />
+    <Content Include="img\index-img\banner-2.jpg" />
+    <Content Include="img\index-img\carrito.png" />
+    <Content Include="img\index-img\dropdwn.png" />
+    <Content Include="img\index-img\sencillo.png" />
+    <Content Include="img\index-img\user.png" />
+    <Content Include="img\login.svg" />
+    <Content Include="img\registro.svg" />
+    <Content Include="js\login.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
@@ -159,9 +171,8 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

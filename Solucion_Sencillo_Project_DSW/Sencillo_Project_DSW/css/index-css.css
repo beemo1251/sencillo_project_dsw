@@ -1,0 +1,181 @@
+.rectangle-1{
+    position: absolute;
+    width: 100%;
+    height: 62px;
+    left: 0px;
+    top: 0px;
+    background: #F0204C;
+}
+
+.sencillo{
+    position: absolute;
+    width: 159px;
+    height: 33px;
+    left: 110px;
+    top: 13px;
+}
+
+.buscador {
+    font-family: Roboto;
+    position: absolute;
+    height: 40px;
+    left: 20%;
+    top: 5px;
+    width: 600px;
+    border: 0;
+    margin: 0;
+    box-sizing: content-box;
+    border-radius: 2px;
+}
+
+
+.user-text {
+    position: absolute;
+    width: 109px;
+    height: 28px;
+    left: 1320px;
+    top: 17px;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 28px;
+
+    color: #FFFFFF;
+}
+
+.user-img{
+    position: absolute;
+    width: 41px;
+    height: 41px;
+    left: 1269px;
+    top: 10px;
+}
+
+.carrito-text {
+    position: absolute;
+    width: 73px;
+    height: 28px;
+    left: 1636px;
+    top: 17px;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 28px;
+
+color: #FFFFFF;
+}
+
+.carrito-img{
+    position: absolute;
+    width: 41px;
+    height: 41px;
+    left: 1580px;
+    top: 10px;
+}
+
+#myCarousel{
+    top: 105px;
+}
+
+/*NAV BAR*/
+body{
+    margin: 0;
+    padding: 0;
+    font-family: Roboto;
+}
+
+.dropdwn{
+    margin: 0 auto;
+    margin-top: 62px;
+}
+
+nav{
+    height: 50px;
+    background: rgb(240, 240, 240);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+nav ul{
+    padding: 0;
+    margin: 0;
+    margin-right: 50px;
+    float: none;
+}
+
+nav ul li{
+    background:rgb(240, 240, 240);
+    position: relative;
+    list-style: none;
+    display: inline-block;
+    text-decoration: none;
+}
+
+nav ul li a{
+    display: block;
+    padding: 0 15px;
+    color: black;
+    text-decoration: none;
+    line-height: 50px;
+    font-size: 18px;
+}
+
+nav ul li a:hover{
+    background: rgb(180, 180, 180);;
+}
+
+nav ul ul{
+    position: absolute;
+    top: 50px;
+    display: none;
+}
+
+nav ul li:hover > ul{
+    display: block;
+}
+
+nav ul ul li {
+    width: 300px;
+    float: none;
+    display: list-item;
+    position: relative;
+    text-align: left;
+}
+
+/*  CARRUSEL DE IMAGENES*/
+.slider{
+    margin: auto;
+    overflow: hidden;
+}
+
+.slider ul{
+    display: flex;
+    padding: 0;
+
+    animation: cambio 18s infinite alternate;
+}
+
+.slider li{
+    list-style: none;
+}
+
+@keyframes cambio {
+    0% {margin-left: 0;}
+    20% {margin-left: 0;}
+
+    25% {margin-left: -100%;}
+    45% {margin-left: -100%;}
+
+    /* EN CASO HUBIERA UNA TERCERA IMAGEN
+    50% {margin-left: -200%;}
+    70% {margin-left: -200%;}
+    */
+
+    /* EN CASO HUBIERA UNA CUARTA IMAGEN
+    75% {margin-left: -300%;}
+    100% {margin-left: -300%;}
+    */
+}
