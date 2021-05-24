@@ -121,9 +121,11 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ProductosController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Producto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -134,6 +136,7 @@
     <Content Include="css\estilos-perfil.css" />
     <Content Include="css\index-css.css" />
     <Content Include="css\login.css" />
+    <Content Include="css\product.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -145,8 +148,14 @@
     <Content Include="img\index-img\sencillo.png" />
     <Content Include="img\index-img\user.png" />
     <Content Include="img\login.svg" />
+    <Content Include="img\productos\1.jpg" />
+    <Content Include="img\productos\2.jpg" />
+    <Content Include="img\productos\3.jpg" />
+    <Content Include="img\productos\4.jpg" />
+    <Content Include="img\productos\5.jpg" />
     <Content Include="img\registro.svg" />
     <Content Include="js\login.js" />
+    <Content Include="js\product-slider.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
@@ -173,10 +182,11 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\Login.cshtml" />
+    <Content Include="Views\Productos\listadoProductos.cshtml" />
+    <Content Include="Views\Productos\detailsProducto.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

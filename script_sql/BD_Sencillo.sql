@@ -72,7 +72,7 @@ create table tb_producto
 	precio decimal(6,2) not null,
 	stock int not null,
 	medida varchar(50) not null,
-	estado char(1) check (estado = '1' or estado = '0')
+	estado char(1) check (estado = '1' or estado = '0'),
 	id_categoria int not null,
 	constraint fk_categoria_producto foreign key (id_categoria) references tb_categoria (id_categoria)
 )
@@ -160,20 +160,20 @@ insert into tb_categoria(descripcion, estado) values ('Abarrotes','1')
 select * from tb_producto
 go
 
-insert into tb_producto (descripcion, marca, precio, stock, medida, id_categoria) values ('Pisco Embajador Quebranta', 'Embajador', 25.90, 50, '700ml', '1', 1)
-insert into tb_producto (descripcion, marca, precio, stock, medida, id_categoria) values ('Cerveza Revolucion Craft', 'Revolucion', 10.90, 20, '330ml' '1',, 1)
-insert into tb_producto (descripcion, marca, precio, stock, medida, id_categoria) values ('Papas Lays Clasicas', 'Frito Lay', 16.50, 30, '160gr', '1', 2)
-insert into tb_producto (descripcion, marca, precio, stock, medida, id_categoria) values ('Maní Crocante Karinto', 'Karinto', 3.40, 25, '100gr', '1', 2)
-insert into tb_producto (descripcion, marca, precio, stock, medida, id_categoria) values ('Chicle Trident Fresa', 'Trident', 2.90, 35, '30gr', '1', 3)
-insert into tb_producto (descripcion, marca, precio, stock, medida, id_categoria) values ('Bizcocho Chocman', 'Costa', 2.90, 30, '30gr', '1', 3)
-insert into tb_producto (descripcion, marca, precio, stock, medida, id_categoria) values ('Tres Leches Tambo', 'Tambo', 3.90, 10, '1und', '1', 4)
-insert into tb_producto (descripcion, marca, precio, stock, medida, id_categoria) values ('Pan Bimbo Integral', 'Bimbo', 6.90, 15, '480gr', '1', 4)
-insert into tb_producto (descripcion, marca, precio, stock, medida, id_categoria) values ('Leche Gloria UHT', 'Gloria', 3.90, 35, '900ml', '1', 5)
-insert into tb_producto (descripcion, marca, precio, stock, medida, id_categoria) values ('Helado Donofrio Sublime', 'Donofrio', 2.80, 20, '75ml', '1', 5)
-insert into tb_producto (descripcion, marca, precio, stock, medida, id_categoria) values ('Detergente Ariel Revitacolor', 'Ariel', 5.80, 25, '500gr', '1', 6)
-insert into tb_producto (descripcion, marca, precio, stock, medida, id_categoria) values ('Lavavajilla Ayudin Limon', 'Ayudin', 2.90, 10, '300gr', '1', 6)
-insert into tb_producto (descripcion, marca, precio, stock, medida, id_categoria) values ('Aceite Primor clasico', 'Primor', 8.00, 30, '1lt', '1', 7)
-insert into tb_producto (descripcion, marca, precio, stock, medida, id_categoria) values ('Conserva Trozos de Atun Campomar', 'Campomar', 5.20, 30, '170gr', '1', 7)
+insert into tb_producto (descripcion, marca, precio, stock, medida, estado,id_categoria) values ('Pisco Embajador Quebranta', 'Embajador', 25.90, 50, '700ml', '1', 1)
+insert into tb_producto (descripcion, marca, precio, stock, medida, estado,id_categoria) values ('Cerveza Revolucion Craft', 'Revolucion', 10.90, 20, '330ml', '1', 1)
+insert into tb_producto (descripcion, marca, precio, stock, medida, estado,id_categoria) values ('Papas Lays Clasicas', 'Frito Lay', 16.50, 30, '160gr', '1', 2)
+insert into tb_producto (descripcion, marca, precio, stock, medida, estado,id_categoria) values ('Maní Crocante Karinto', 'Karinto', 3.40, 25, '100gr', '1', 2)
+insert into tb_producto (descripcion, marca, precio, stock, medida, estado,id_categoria) values ('Chicle Trident Fresa', 'Trident', 2.90, 35, '30gr', '1', 3)
+insert into tb_producto (descripcion, marca, precio, stock, medida, estado,id_categoria) values ('Bizcocho Chocman', 'Costa', 2.90, 30, '30gr', '1', 3)
+insert into tb_producto (descripcion, marca, precio, stock, medida, estado,id_categoria) values ('Tres Leches Tambo', 'Tambo', 3.90, 10, '1und', '1', 4)
+insert into tb_producto (descripcion, marca, precio, stock, medida, estado,id_categoria) values ('Pan Bimbo Integral', 'Bimbo', 6.90, 15, '480gr', '1', 4)
+insert into tb_producto (descripcion, marca, precio, stock, medida, estado,id_categoria) values ('Leche Gloria UHT', 'Gloria', 3.90, 35, '900ml', '1', 5)
+insert into tb_producto (descripcion, marca, precio, stock, medida, estado,id_categoria) values ('Helado Donofrio Sublime', 'Donofrio', 2.80, 20, '75ml', '1', 5)
+insert into tb_producto (descripcion, marca, precio, stock, medida, estado,id_categoria) values ('Detergente Ariel Revitacolor', 'Ariel', 5.80, 25, '500gr', '1', 6)
+insert into tb_producto (descripcion, marca, precio, stock, medida, estado,id_categoria) values ('Lavavajilla Ayudin Limon', 'Ayudin', 2.90, 10, '300gr', '1', 6)
+insert into tb_producto (descripcion, marca, precio, stock, medida, estado,id_categoria) values ('Aceite Primor clasico', 'Primor', 8.00, 30, '1lt', '1', 7)
+insert into tb_producto (descripcion, marca, precio, stock, medida, estado,id_categoria) values ('Conserva Trozos de Atun Campomar', 'Campomar', 5.20, 30, '170gr', '1', 7)
 
 select * from tb_compra_producto
 go
