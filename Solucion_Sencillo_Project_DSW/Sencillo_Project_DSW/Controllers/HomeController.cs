@@ -43,24 +43,10 @@ namespace Sencillo_Project_DSW.Controllers
             return View();
         }
 
-        Producto Buscar(int? id = null)
-        {
-            if (id == null)
-                return new Producto();
-            else
-                return productos().Where(p => p.idProducto == id).FirstOrDefault();
 
-        }
 
-        public ActionResult detailsProducto(int? id = null)
-        {
-            if (id == null) return RedirectToAction("Index");
-            return View(Buscar(id));
-        }
 
-        public ActionResult Index()
-        {
-            return View(productos());
-        }
+
+ 
     }
 }

@@ -10,6 +10,34 @@
     <link href="~/css/index-css.css" rel="stylesheet">
 </head>
 <div>
+
+    <div>
+
+        <div style="width:80%; display:inline-block; float:right;"></div>
+        <div style="width:20%; display:inline-block; float:right; text-align:center">
+
+            <!-- agrego  para el  login -->
+
+            <em>@ViewBag.usuario</em>
+            <br />
+
+            @if (ViewBag.usuario == null)
+            {
+                @Html.ActionLink("Inicio de Sesion", "Inicio", "Productos")
+            }
+            else
+            {
+                @Html.ActionLink("Cerrar Sesion", "Cerrar", "Productos")
+            }
+        </div>
+    </div>
+
+
+
+
+
+
+
     <body>
         <!--NAV BAR PRINCIPAL-->
         <div class="rectangle-1">
@@ -74,7 +102,7 @@
                 </nav>
             </center>
         </div>
-        
+
 
         <div class="container body-content">
             @RenderBody()

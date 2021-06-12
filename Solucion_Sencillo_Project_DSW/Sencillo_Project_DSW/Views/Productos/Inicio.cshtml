@@ -1,0 +1,52 @@
+﻿
+@{
+    ViewBag.Title = "Inicio";
+}
+
+<h2>Inicio</h2>
+
+
+@using (Html.BeginForm())
+
+{
+
+    <table style="margin:0 auto">
+
+        <tr>
+
+            <td>Login</td>
+
+            <td>@Html.TextBox("email", "")</td>
+
+        </tr>
+
+        <tr>
+
+            <td>Clave</td>
+
+            <td>@Html.TextBox("clave", "", new { @type = "password" })</td>
+
+        </tr>
+
+        <tr>
+
+            <td colspan="2">
+
+                <input type="submit" value="Aceptar" class="btn btn-default" /> |
+
+                @Html.ActionLink("Retornar", "Index", null, new { @class = "btn btn-default" })
+
+            </td>
+
+        </tr>
+
+    </table>
+
+}
+
+<div>
+
+    @ViewBag.mensaje
+
+</div>
+

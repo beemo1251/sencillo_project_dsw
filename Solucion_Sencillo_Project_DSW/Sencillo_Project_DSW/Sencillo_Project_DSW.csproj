@@ -126,6 +126,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Producto.cs" />
+    <Compile Include="Models\Tipo_Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -189,10 +190,11 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Productos\Index.cshtml" />
     <Content Include="Views\Home\Login.cshtml" />
     <Content Include="Views\Productos\listadoProductos.cshtml" />
-    <Content Include="Views\Home\detailsProducto.cshtml" />
+    <Content Include="Views\Productos\detailsProducto.cshtml" />
+    <Content Include="Views\Productos\Inicio.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
