@@ -4,6 +4,32 @@ go
 use BD_sencillo_market
 go
 
+
+-- procedure  para  el  login Paulo
+create  proc sp_logueo
+@email varchar(200),
+@contraseña varchar(200)
+as
+Select top 1 c.* from tb_tipo_usuario c 
+where id_tipo_usuario = (Select id_tipo_usuario from tb_usuario where email_usuario = @email and contraseña = @contraseña)
+
+go
+
+--prueba del  procedure
+exec sp_logueo 'usuario01@gmail.com' , 'constraseña01'
+
+
+
+
+
+
+
+
+
+
+
+
+
 create table tb_tipo_usuario
 (
 	id_tipo_usuario int identity(1,1) primary key,
