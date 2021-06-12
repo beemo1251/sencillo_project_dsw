@@ -149,10 +149,19 @@
     <Content Include="img\index-img\user.png" />
     <Content Include="img\login.svg" />
     <Content Include="img\productos\1.jpg" />
+    <Content Include="img\productos\10.jpg" />
+    <Content Include="img\productos\11.jpg" />
+    <Content Include="img\productos\12.jpg" />
+    <Content Include="img\productos\13.jpg" />
+    <Content Include="img\productos\14.jpg" />
     <Content Include="img\productos\2.jpg" />
     <Content Include="img\productos\3.jpg" />
     <Content Include="img\productos\4.jpg" />
     <Content Include="img\productos\5.jpg" />
+    <Content Include="img\productos\6.jpg" />
+    <Content Include="img\productos\7.jpg" />
+    <Content Include="img\productos\8.jpg" />
+    <Content Include="img\productos\9.jpg" />
     <Content Include="img\registro.svg" />
     <Content Include="js\login.js" />
     <Content Include="js\product-slider.js" />
@@ -183,7 +192,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\Login.cshtml" />
     <Content Include="Views\Productos\listadoProductos.cshtml" />
-    <Content Include="Views\Productos\detailsProducto.cshtml" />
+    <Content Include="Views\Home\detailsProducto.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

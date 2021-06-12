@@ -79,7 +79,6 @@ C:\CIBERTEC\DESARROLLO DE SERVICIOS WEB I\sencillo_project_dsw\Solucion_Sencillo
 C:\CIBERTEC\DESARROLLO DE SERVICIOS WEB I\sencillo_project_dsw\Solucion_Sencillo_Project_DSW\Sencillo_Project_DSW\bin\es\System.Web.WebPages.resources.dll
 C:\CIBERTEC\DESARROLLO DE SERVICIOS WEB I\sencillo_project_dsw\Solucion_Sencillo_Project_DSW\Sencillo_Project_DSW\bin\es\System.Web.WebPages.Deployment.resources.dll
 C:\CIBERTEC\DESARROLLO DE SERVICIOS WEB I\sencillo_project_dsw\Solucion_Sencillo_Project_DSW\Sencillo_Project_DSW\bin\es\System.Web.WebPages.Razor.resources.dll
-C:\CIBERTEC\DESARROLLO DE SERVICIOS WEB I\sencillo_project_dsw\Solucion_Sencillo_Project_DSW\Sencillo_Project_DSW\obj\Debug\Sencillo_Project_DSW.csprojAssemblyReference.cache
 C:\CIBERTEC\DESARROLLO DE SERVICIOS WEB I\sencillo_project_dsw\Solucion_Sencillo_Project_DSW\Sencillo_Project_DSW\obj\Debug\Sencillo_Project_DSW.csproj.CoreCompileInputs.cache
 C:\CIBERTEC\DESARROLLO DE SERVICIOS WEB I\sencillo_project_dsw\Solucion_Sencillo_Project_DSW\Sencillo_Project_DSW\obj\Debug\Sencillo_Project_DSW.csproj.CopyComplete
 C:\CIBERTEC\DESARROLLO DE SERVICIOS WEB I\sencillo_project_dsw\Solucion_Sencillo_Project_DSW\Sencillo_Project_DSW\obj\Debug\Sencillo_Project_DSW.dll
@@ -169,3 +168,4 @@ C:\Users\Computer\Desktop\proyecto_dsw\sencillo_project_dsw\Solucion_Sencillo_Pr
 C:\Users\Computer\Desktop\proyecto_dsw\sencillo_project_dsw\Solucion_Sencillo_Project_DSW\Sencillo_Project_DSW\obj\Debug\Sencillo_Project_DSW.csproj.CopyComplete
 C:\Users\Computer\Desktop\proyecto_dsw\sencillo_project_dsw\Solucion_Sencillo_Project_DSW\Sencillo_Project_DSW\obj\Debug\Sencillo_Project_DSW.dll
 C:\Users\Computer\Desktop\proyecto_dsw\sencillo_project_dsw\Solucion_Sencillo_Project_DSW\Sencillo_Project_DSW\obj\Debug\Sencillo_Project_DSW.pdb
+C:\CIBERTEC\DESARROLLO DE SERVICIOS WEB I\sencillo_project_dsw\Solucion_Sencillo_Project_DSW\Sencillo_Project_DSW\obj\Debug\Sencillo_Project_DSW.csproj.AssemblyReference.cache

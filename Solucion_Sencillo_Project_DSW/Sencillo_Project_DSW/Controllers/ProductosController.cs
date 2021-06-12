@@ -39,14 +39,7 @@ namespace Sencillo_Project_DSW.Controllers
             return temporal;
         }
 
-        Producto Buscar(int? id = null)
-        {
-            if (id == null)
-                return new Producto();
-            else
-                return productos().Where(p => p.idProducto == id).FirstOrDefault();
-
-        }
+        
 
         public ActionResult listadoProductos()
         {
@@ -54,10 +47,6 @@ namespace Sencillo_Project_DSW.Controllers
             return View(productos());
         }
 
-        public ActionResult detailsProducto(int? id = null)
-        {
-            if (id == null) return RedirectToAction("listadoProducto");
-            return View(Buscar(id));
-        }
+        
     }
 }
