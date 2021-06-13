@@ -4,32 +4,6 @@ go
 use BD_sencillo_market
 go
 
-
--- procedure  para  el  login Paulo
-create  proc sp_logueo
-@email varchar(200),
-@contraseña varchar(200)
-as
-Select top 1 c.* from tb_tipo_usuario c 
-where id_tipo_usuario = (Select id_tipo_usuario from tb_usuario where email_usuario = @email and contraseña = @contraseña)
-
-go
-
---prueba del  procedure
-exec sp_logueo 'usuario01@gmail.com' , 'constraseña01'
-
-
-
-
-
-
-
-
-
-
-
-
-
 create table tb_tipo_usuario
 (
 	id_tipo_usuario int identity(1,1) primary key,
@@ -52,8 +26,8 @@ create table tb_empleado
 	dni_empleado char(8) primary key,
 	nombre_empleado varchar(200) not null,
 	apellido_empleado varchar(200) not null,
-	direccion_empleado varchar(200) not null,
-	fecha_nacimiento date not null,
+	direccion_empleado varchar(200),
+	fecha_nacimiento date,
 	id_usuario int not null,
 	constraint fk_user_empleado foreign key (id_usuario) references tb_usuario (id_usuario)
 )
@@ -64,9 +38,9 @@ create table tb_cliente
 	dni_cliente char(8) primary key,
 	nombre_cliente varchar(200) not null,
 	apellido_cliente varchar(200) not null,
-	direccion_cliente varchar(200) not null,
-	fecha_nacimiento date not null,
-	id_usuario int not null,
+	direccion_cliente varchar(200),
+	fecha_nacimiento date,
+	id_usuario int,
 	constraint fk_user_cliente foreign key (id_usuario) references tb_usuario (id_usuario)
 )
 go
@@ -76,8 +50,8 @@ create table tb_proveedor
 	ruc_proveedor char(11) primary key,
 	nombre_proveedor varchar(200) not null,
 	direccion_proveedor varchar(200) not null,
-	telefono_proveedor varchar(9) not null,
-	email_proveedor varchar(200) not null,
+	telefono_proveedor varchar(9),
+	email_proveedor varchar(200),
 	estado char(1) check (estado = '1' or estado = '0')
 )
 go

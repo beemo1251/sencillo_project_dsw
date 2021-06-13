@@ -122,10 +122,12 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProductosController.cs" />
+    <Compile Include="Controllers\RegistroController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Producto.cs" />
+    <Compile Include="Models\Registro.cs" />
     <Compile Include="Models\Tipo_Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -135,13 +137,17 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="css\estilos-perfil.css" />
+    <Content Include="css\font-awesome.min.css" />
     <Content Include="css\index-css.css" />
     <Content Include="css\login.css" />
     <Content Include="css\product.css" />
+    <Content Include="css\style.css" />
     <Content Include="favicon.ico" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="img\bg.jpeg" />
     <Content Include="img\index-img\banner-1.jpg" />
     <Content Include="img\index-img\banner-2.jpg" />
     <Content Include="img\index-img\carrito.png" />
@@ -168,6 +174,11 @@
     <Content Include="js\product-slider.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\FontAwesome.otf" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -195,6 +206,7 @@
     <Content Include="Views\Productos\listadoProductos.cshtml" />
     <Content Include="Views\Productos\detailsProducto.cshtml" />
     <Content Include="Views\Productos\Inicio.cshtml" />
+    <Content Include="Views\Registro\Registro.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

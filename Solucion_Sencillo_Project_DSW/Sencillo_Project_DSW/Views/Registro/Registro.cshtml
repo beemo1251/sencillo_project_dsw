@@ -1,0 +1,71 @@
+﻿
+@{
+    ViewBag.Title = "Registro";
+    Layout = null;
+}
+
+<head>
+
+    <title>Registro</title>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="~/css/style.css" type="text/css" media="all">
+    <link rel="stylesheet" href="~/css/font-awesome.min.css" type="text/css" media="all">
+    <link href="//fonts.googleapis.com/css?family=Mukta:300,400,500" rel="stylesheet">
+
+</head>
+<body>
+
+    <section class="main">
+        <div class="bottom-grid">
+            <div class="logo">
+                <h1> <a href="~/Productos/Inicio">Regresar</a></h1>
+            </div>
+        </div>
+        <div class="w3lhny-register">
+            <div class="iconhny">
+                <span class="fa fa-user-plus"></span>
+            </div>
+            <form ="Registro" method="post" class="register-form">
+                <fieldset>
+                    <div class="form">
+                        <div class="form-row">
+                            <span class="fa fa-user"></span>
+                            <input name="dni" type="text" class="form-text" placeholder="DNI" required="">
+                        </div>
+
+                        <div class="form-row">
+                            <span class="fa fa-user"></span>
+                            <input name="nombre" type="text" class="form-text" placeholder="Nombre" required="">
+                        </div>
+
+                        <div class="form-row">
+                            <span class="fa fa-user"></span>
+                            <input name="apellido" type="text" class="form-text" placeholder="Apellido" required="">
+                        </div>
+
+                        <div class="form-row">
+                            <span class="fa fa-envelope"></span>
+
+                            <input name="correo" type="email" class="form-text" placeholder="Email" required="">
+                        </div>
+
+                        <div class="form-row">
+                            <span class="fa fa-lock"></span>
+
+                            <input name="contraseña" type="password" class="form-text" placeholder="Contraseña" required="">
+                        </div>
+                        <div class="form-row button-login">
+                            <button class="btn btn-login">Registrarse</button>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+
+            <p class="already">¿ Ya tiene una cuenta ? <a href="~/Productos/Inicio">Iniciar Sesión</a></p>
+        </div>
+    </section>
+
+</body>
