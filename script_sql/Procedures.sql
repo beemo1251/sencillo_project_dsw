@@ -1,6 +1,12 @@
 use BD_sencillo_market
 go
 
+
+
+
+
+
+
 -- procedure  para  el  login Paulo
 create  proc sp_logueo
 @email varchar(200),
@@ -33,6 +39,8 @@ begin
 end
 go
 
+
+
 -- trigger para enlazar el usuario con cliente
 create or alter trigger userCliente
 on tb_usuario
@@ -49,3 +57,7 @@ update tb_cliente set id_usuario = @idusu
 where id_cliente = @idcli
 
 exec sp_registro_cliente '45678937','jose','estrada','jose@gmail.com','jose'
+
+
+
+
