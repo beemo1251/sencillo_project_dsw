@@ -169,6 +169,7 @@
     <Content Include="img\productos\7.jpg" />
     <Content Include="img\productos\8.jpg" />
     <Content Include="img\productos\9.jpg" />
+    <Content Include="img\red2.jpg" />
     <Content Include="img\registro.svg" />
     <Content Include="js\login.js" />
     <Content Include="js\product-slider.js" />
@@ -202,7 +203,6 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Productos\Index.cshtml" />
-    <Content Include="Views\Home\Login.cshtml" />
     <Content Include="Views\Productos\listadoProductos.cshtml" />
     <Content Include="Views\Productos\detailsProducto.cshtml" />
     <Content Include="Views\Productos\Inicio.cshtml" />
@@ -210,6 +210,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Home\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
