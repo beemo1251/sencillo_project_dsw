@@ -1,0 +1,152 @@
+﻿* {
+    padding: 0;
+    margin: 0;
+}
+
+.body__compra {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.lista__productos {
+    width: 62%;
+    height: 100%;
+    margin: 20px auto;
+}
+
+.resumen__compra {
+    width: 32%;
+    height: 240px;
+    margin: 20px auto;
+    padding: 5px;
+    background-color: #fff;
+}
+
+.item_lista {
+    width: 100%;
+    height: 170px;
+    margin-bottom: 20px;
+    display: flex;
+    background-color: white;
+}
+
+.image_item {
+    width: 20%;
+    height: 100%;
+    margin: 0 15px;
+}
+
+.image_item img {
+    width: 100%;
+    height: 100%;
+}
+
+.content_item {
+    width: 70%;
+    height: 100%;
+    display: flex;
+}
+
+.descripcion_prod {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.accion_item {
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.accion_item a {
+    border: none;
+    width: 60px;
+    height: 30px;
+    text-align: center;
+    padding: 5px;
+}
+
+.btn_delete {
+    background-color: #e42958;
+    color: #fff;
+    text-decoration: none;
+}
+
+.accion_item a:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    color: white;
+}
+
+.title_descripcion span {
+    color: #afafaf;
+}
+
+.content_descripcion {
+    display: flex;
+    margin-top: 15px;
+    justify-content: space-around;
+}
+
+.descripcion_compra {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.resumen__compra h2 {
+    margin: 10px;
+}
+
+.text_compra {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+}
+
+.accion_compra {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 10px;
+}
+
+.accion_compra button {
+    margin: 5px;
+    height: 35px;
+    border: none;
+    cursor: pointer;
+}
+
+.accion_compra a {
+    margin: 5px;
+    height: 35px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn_pagar {
+    background-color: #e42958;
+    color: #fff;
+}
+
+.btn_continuar {
+    background-color: #808080;
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+}
+
+.accion_compra button:hover {
+    transform: scale(1.03);
+}
+
+.accion_compra a:hover {
+    transform: scale(1.03);
+    color: white;
+}

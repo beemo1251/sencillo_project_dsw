@@ -94,11 +94,10 @@ go
 create table tb_pedido
 (
 	id_pedido int identity(1,1) primary key,
-	estado varchar(10) check(estado = 'pendiente' or estado = 'entregado' or estado = 'cancelado'),
-	id_cliente int not null,
-	dni_empleado char(8) not null,
-	constraint fk_pedido_cliente foreign key (id_cliente) references tb_cliente (id_cliente),
-	constraint fk_pedido_empleado foreign key (dni_empleado) references tb_empleado (dni_empleado)
+	estado varchar(10) check(estado = '0' or estado = '1'),
+	id_producto int not null,
+	cantidad int not null,
+	constraint fk_boleta_producto foreign key (id_producto) references tb_producto (id_producto)
 )
 go
 
@@ -106,11 +105,14 @@ create table tb_boleta
 (
 	id_boleta int identity(1,1) primary key,
 	fecha date not null,
-	id_producto int not null,
-	cantidad int not null,
+	total int not null,
 	id_pedido int not null,
-	constraint fk_boleta_producto foreign key (id_producto) references tb_producto (id_producto),
-	constraint fk_boleta_pedido foreign key (id_pedido) references tb_pedido (id_pedido)
+	id_cliente int not null,
+	dni_empleado char(8) not null,
+	estado varchar(50) check(estado = 'pendiente' or estado = 'entregado' or estado = 'cancelado'),
+	constraint fk_boleta_pedido foreign key (id_pedido) references tb_pedido (id_pedido),
+	constraint fk_pedido_cliente foreign key (id_cliente) references tb_cliente (id_cliente),
+	constraint fk_pedido_empleado foreign key (dni_empleado) references tb_empleado (dni_empleado),
 )
 go
 
@@ -189,11 +191,11 @@ insert into tb_compra_producto (ruc_proveedor, id_producto, cantidad, fecha) val
 select * from tb_pedido
 go
 
-insert into tb_pedido (estado, id_cliente, dni_empleado) values ('entregado', 1, '87654321')
-insert into tb_pedido (estado, id_cliente, dni_empleado) values ('pendiente', 2, '76543218')
+insert into tb_pedido (estado, id_producto, cantidad) values ('entregado', 5, 2)
+insert into tb_pedido (estado, id_producto, cantidad) values ('pendiente', 3, 2)
 
 select * from tb_boleta
 go
 
-insert into tb_boleta (fecha, id_producto, cantidad, id_pedido) values ('2021/05/22',1,1,2)
-insert into tb_boleta (fecha, id_producto, cantidad, id_pedido) values ('2021/05/22',5,1,1)
+insert into tb_boleta (fecha, total, id_pedido, id_cliente, dni_empleado, estado) values ('2021/05/22',15,1,2,'87654321','1')
+insert into tb_boleta (fecha, total, id_pedido, id_cliente, dni_empleado, estado) values ('2021/05/22',5,2,1,'76543218','1')

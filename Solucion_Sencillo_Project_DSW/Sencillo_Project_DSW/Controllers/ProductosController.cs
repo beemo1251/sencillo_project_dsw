@@ -39,16 +39,21 @@ namespace Sencillo_Project_DSW.Controllers
             return temporal;
         }
 
-        
-
-        public ActionResult listadoProductos()
+        public ActionResult Index()
         {
             //para el  login
             ViewBag.usuario = InicioSesion();
+
+            if(Session["carrito"] == null)
+            {
+                Session["carrito"] = new List<Pedido>();
+                ViewBag.carrito = "null";
+            }
+
+            ViewBag.carrito = "carrito";
             // SE ENVIA LA LISTA DE PRODUCTOS
             return View(productos());
         }
-
 
         Producto Buscar(int? id = null)
         {
@@ -61,25 +66,27 @@ namespace Sencillo_Project_DSW.Controllers
 
         public ActionResult detailsProducto(int? id = null)
         {
-
-          
-
             if (id == null) return RedirectToAction("Index");
+
+            if (Session["carrito"] == null)
+            {
+                Session["carrito"] = new List<Pedido>();
+                ViewBag.carrito = "null";
+            }
+
+            ViewBag.carrito = "carrito";
 
             //para el  login
             ViewBag.usuario = InicioSesion();
             return View(Buscar(id));
         }
 
-
-        public ActionResult Index()
+        /*public ActionResult Index()
         {
             //para el  login
             ViewBag.usuario = InicioSesion();
             return View(productos());
-        }
-
-
+        }*/
 
         /*OPERACIONES PARA EL  FUNCIONAMIENTO DEL  LOGIN*/
 
@@ -91,7 +98,6 @@ namespace Sencillo_Project_DSW.Controllers
 
             using (SqlConnection cn = new SqlConnection(cadena))
             {
-
                 SqlCommand cmd = new SqlCommand("sp_logueo", cn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@email", email);
@@ -116,8 +122,6 @@ namespace Sencillo_Project_DSW.Controllers
             return reg;
         }
 
-
-
         public ActionResult Inicio() // creamos  vista  ,  plantilla :empty(sin modelo)
         {
             return View();
@@ -139,10 +143,7 @@ namespace Sencillo_Project_DSW.Controllers
                 Session["login2"] = reg;
                 return RedirectToAction("Index");
             }
-
         }
-
-
 
         public ActionResult Cerrar()
         {
@@ -150,56 +151,89 @@ namespace Sencillo_Project_DSW.Controllers
             return RedirectToAction("Index");
         }
 
-
         string InicioSesion()
         {
-
-
-
             if (Session["login2"] == null)
-
+            {
                 return null;
-
-            else
-
+            }
+            else 
+            {
                 return (Session["login2"] as Tipo_Usuario).descripcion;
-
+            }
         }
 
-
         /*******************************************************/
+        
+        [HttpPost]public ActionResult DetailsProducto(int id, int cantidad, int stock)
+        {
+            ViewBag.usuario = InicioSesion();
 
+            if (Session["carrito"] == null)
+            {
+                Session["carrito"] = new List<Pedido>();
+                ViewBag.carrito = "null";
+            }
 
+            ViewBag.carrito = "carrito";
 
+            if (cantidad > stock)
+            {
+                ViewBag.mensaje = "Ingrese una cantidad menor al stock";
+                return View(Buscar(id));
+            }
 
+            //Session["carrito"] = new List<Pedido>();
 
+            Producto reg = Buscar(id);
 
+            Pedido it = new Pedido()
+            {
+                id_producto = reg.idProducto,
+                descripcion = reg.descripcion,
+                medida = reg.medida,
+                precio = reg.precio,
+                cantidad = cantidad,
+            };
+            List<Pedido> temporal = (List<Pedido>)Session["carrito"];
+            temporal.Add(it);
 
+            ViewBag.mensaje = "Producto agregado";
+            return View(reg);
+        }
 
+        public ActionResult carrito()
+        {
+            ViewBag.usuario = InicioSesion();
 
+            return View((List<Pedido>)Session["carrito"]);
+        }
 
+        public ActionResult Delete(int id)
+        {
+            List<Pedido> temporal = (List<Pedido>)Session["carrito"];
 
+            Pedido reg = temporal.Find(i => i.id_producto == id);
+            temporal.Remove(reg);
 
+            return RedirectToAction("carrito");
+        }
 
+        [HttpPost]public ActionResult carrito(string mns)
+        {
+            if (Session["login2"] == null)
+            {
+                ViewBag.mensaje = "Debe iniciar sesion para realizar una compra";
+                return View((List<Pedido>)Session["carrito"]);
+            }
 
+            //Session["login2"] = null;
+            Session["carrito"] = null;
 
+            /*List<Pedido> temporal = (List<Pedido>)Session["carrito"];
+            Pedido reg = temporal.Find(i => i.id_producto == id);*/
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            return RedirectToAction("Index");
+        }
     }
 }

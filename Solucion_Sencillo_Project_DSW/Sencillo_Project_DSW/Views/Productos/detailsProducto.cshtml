@@ -6,67 +6,78 @@
 <!-- Carousel -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.4.1/css/glide.core.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.4.1/css/glide.theme.min.css">
+<!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 <!-- Animate On Scroll -->
 <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 <!-- Custom StyleSheet -->
 <link rel="stylesheet" href="~/css/product.css" />
+<title>SENCILLO | Cada vez más cerca</title>
+
+<style>
+    #main {
+        margin-top: 140px;
+    }
+</style>
 
 <main id="main">
     <div class="container">
+        <div class="alert-danger text-center p-3">@ViewBag.mensaje</div>
         <!-- Products Details -->
         <section class="section product-details__section">
-            <div class="product-detail__container">
-                <div class="product-detail__left">
-                    <div class="details__container--left">
-                        <div class="product__picture" id="product__picture">
-                            <div class="picture__container">
-                                <img src="@Url.Content(string.Format("~/img/productos/{0}.jpg", @Html.DisplayFor(model => model.idProducto)))" />
+            @using (Html.BeginForm("DetailsProducto", "Productos", FormMethod.Post))
+            {
+                <div class="product-detail__container">
+                    <div class="product-detail__left">
+                        <div class="details__container--left">
+                            <div class="product__picture" id="product__picture">
+                                <div class="picture__container">
+                                    <img src="@Url.Content(string.Format("~/img/productos/{0}.jpg", @Html.DisplayFor(model => model.idProducto)))" />
+                                </div>
                             </div>
+                            <div class="zoom" id="zoom"></div>
                         </div>
-                        <div class="zoom" id="zoom"></div>
+                        <div class="product-details__btn">
+
+                            <button type="submit" class="add">Agregar al carrito</button>
+
+                            @Html.ActionLink("VOLVER", "Index", null ,new { @class ="add"})
+
+                        </div>
                     </div>
 
-                    <div class="product-details__btn">
-                        <a class="add" href="#">
-                            AGREGAR AL CARRITO
-                        </a>
-                        
-                        @Html.ActionLink("VOLVER", "Index")
-                        
-                    </div>
-                </div>
-
-                <div>
-                    <div class="product-detail__right">
-                        <div class="product-detail__content">
-                            <h2>@Html.DisplayFor(model => model.marca)</h2>
-                            <h1>@Html.DisplayFor(model => model.descripcion) x @Html.DisplayFor(model => model.medida)</h1>
-                            <ul class="product__info">
-                                <li>
-                                    <a class="in-stock">En stock (@Html.DisplayFor(model => model.stock) Items)</a>
-                                </li>
-                            </ul>
-                            <div class="price">
-                                <span class="new__price">S/. @Html.DisplayFor(model => model.precio)</span>
-                            </div>
-
-                            <div class="product__info-container">
+                    <div>
+                        <div class="product-detail__right">
+                            <div class="product-detail__content">
+                                <h2>@Html.DisplayFor(model => model.marca)</h2>
+                                <h1>@Html.DisplayFor(model => model.descripcion) x @Html.DisplayFor(model => model.medida)</h1>
                                 <ul class="product__info">
                                     <li>
-                                        <div class="input-counter">
-                                            <span>Cantidad: </span>
-                                            <div>
-                                                <input type="text" min="1" value="1" max="10" class="counter-btn">
-                                            </div>
-                                        </div>
+                                        <a class="in-stock">En stock (@Html.DisplayFor(model => model.stock) Items)</a>
+                                        @Html.Hidden("stock", Model.stock)
                                     </li>
                                 </ul>
+                                <div class="price">
+                                    <span class="new__price">S/. @Html.DisplayFor(model => model.precio)</span>
+                                </div>
+
+                                <div class="product__info-container">
+                                    <ul class="product__info">
+                                        <li>
+                                            <div class="input-counter">
+                                                <span>Cantidad: </span>
+                                                <div>
+                                                    @Html.TextBox("cantidad", 1, new { @class = "counter-btn" })
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            }
         </section>
-
     </div>
 </main>

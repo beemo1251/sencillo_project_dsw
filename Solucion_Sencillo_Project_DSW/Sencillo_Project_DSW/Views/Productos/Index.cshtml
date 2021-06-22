@@ -6,32 +6,11 @@
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-<link href="~/css/index-css.css" rel="stylesheet">
 <title>SENCILLO | Cada vez más cerca</title>
 
 <style>
-    .portal {
-        display: grid;
-        grid-template-columns: repeat(4,1fr);
-        grid-gap: 10px;
-    }
-
-    .item {
-        max-height: 500px;
-        height: auto;
-    }
-
-    img {
-        width: 200px;
-        height: 200px;
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .texto1 {
-        color:gray;
-        font-weight: bold;
+    .slider {
+        margin-top: 140px;
     }
 </style>
 
@@ -43,20 +22,25 @@
     </ul>
 </div>
 <br />
-<div class="portal">
+<div class="row row-cols-1 row-cols-md-4 g-4">
     @foreach (var item in Model)
     {
-    <div class="item">
-        <img src="@Url.Content(string.Format("~/img/productos/{0}.jpg", item.idProducto))" />
-        <br />
-        @Html.DisplayFor(modelItem => item.marca)
-        <br />
-        @Html.DisplayFor(modelItem => item.descripcion) x @Html.DisplayFor(modelItem => item.medida)
-        <br />
-        S/ @Html.DisplayFor(modelItem => item.precio)
-        <br />
-        @Html.ActionLink("Detalle", "detailsProducto", new { id = item.idProducto })
-        <br />
+    <div class="col">
+        <div class="card h-100">
+            <img src="@Url.Content(string.Format("~/img/productos/{0}.jpg", item.idProducto))" class="card-img-top" />
+            <div class="card-body">
+                @Html.DisplayFor(modelItem => item.marca, new { @class = "card-title" })
+                <p class="card-text">
+                    @Html.DisplayFor(modelItem => item.descripcion) x @Html.DisplayFor(modelItem => item.medida)<br />
+                    S/ @Html.DisplayFor(modelItem => item.precio)
+                </p>
+            </div>
+            <div class="card-footer">
+                <small class="text-muted">
+                    @Html.ActionLink("Detalle", "detailsProducto", new { id = item.idProducto })
+                </small>
+            </div>
+        </div>
     </div>
     }
 </div>

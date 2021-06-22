@@ -1,128 +1,164 @@
-body {
-    margin: 0;
-    padding: 0;
-}
-
-.rectangle-1{
-    position: absolute;
+.head {
     width: 100%;
-    height: 62px;
-    left: 0px;
-    top: 0px;
-    background: #F0204C;
+    height: 90px;
     overflow: hidden;
+    align-items: center;
+    position: fixed;
+    z-index: 9;
+    top: 0;
 }
 
-.sencillo{
-    position: absolute;
-    width: 159px;
-    height: 33px;
-    left: 110px;
-    top: 13px;
+.navbar__1 {
+    width: 100%;
+    height: 100%;
+    background-color: #F0204C;
+    display: grid;
+    grid-template-columns: repeat(12, 2fr);
+    grid-template-areas: ". card1 card1 . card2 card2 card2 . card3 . card4 .";
+    place-items: center;
 }
 
-.buscador {
-    font-family: Roboto;
-    position: absolute;
+.navbar__1 {
+    background-color: #F0204C;
+}
+
+.navbar__1_item {
+    width: 100%;
+    margin: auto;
+    text-align: center;
+}
+
+.navbar__1_item img {
+    width: 60%;
+}
+
+.section_user .img_user {
+    width: 30px;
+}
+
+.link_sesion {
+    text-decoration: none;
+    color: white;
+}
+
+.navbar__1_item .item_buscar {
+    width: 100%;
     height: 40px;
-    left: 20%;
-    top: 5px;
-    width: 600px;
-    border: 0;
-    margin: 0;
-    box-sizing: content-box;
-    border-radius: 2px;
+    margin: auto;
+    display: flex;
 }
 
-
-.user-text {
-    position: absolute;
-    width: 109px;
-    height: 28px;
-    left: 1320px;
-    top: 17px;
-
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 24px;
-    line-height: 28px;
-
-    color: #FFFFFF;
+.item_buscar .text_buscar {
+    width: 85%;
+    border: none;
+    padding: 15px;
+    font-size: 0.9rem;
+    outline: none;
 }
 
-.user-img{
-    position: absolute;
-    width: 41px;
-    height: 41px;
-    left: 1269px;
-    top: 10px;
+.btn_buscar {
+    display: flex;
+    width: 15%;
+    border: none;
+    background: #ffff;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    color: #c9c9c9;
+    text-decoration: none;
 }
 
-.carrito-text {
-    position: absolute;
-    width: 73px;
-    height: 28px;
-    left: 1636px;
-    top: 17px;
-
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 24px;
-    line-height: 28px;
-
-color: #FFFFFF;
+.btn_buscar:hover {
+    cursor: pointer;
+    background-color: #dbdbdb;
+    color: #fff;
 }
 
-.carrito-img{
-    position: absolute;
-    width: 41px;
-    height: 41px;
-    left: 1580px;
-    top: 10px;
+.item {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    color: #fff;
+    text-decoration: none;
 }
 
-#myCarousel{
-    top: 105px;
+.user span {
+    font-size: 1em;
+    width: 30%;
+}
+
+.user p {
+    width: 70%;
+    margin: auto;
+}
+
+.user img {
+    width: 30%;
+    margin: auto;
+}
+
+.carrito span {
+    font-size: 2em;
+    width: 30%;
+}
+
+.carrito p {
+    width: 70%;
+    margin: auto;
+}
+
+.carrito img {
+    width: 30%;
+    margin: auto;
+}
+
+.navbar__1_item:nth-last-of-type(4) {
+    grid-area: card1;
+}
+
+.navbar__1_item:nth-last-of-type(3) {
+    grid-area: card2;
+}
+
+.navbar__1_item:nth-last-of-type(2) {
+    grid-area: card3;
+}
+
+.navbar__1_item:nth-last-of-type(1) {
+    grid-area: card4;
 }
 
 /*NAV BAR*/
-body{
-    margin: 0;
-    padding: 0;
-    font-family: Roboto;
-    width: 100%;
-}
-
-.dropdwn{
+.dropdwn {
     margin: 0 auto;
-    margin-top: 62px;
     width: 100%;
+    position: fixed;
+    top: 90px;
+    z-index: 8;
 }
 
-nav{
+nav {
     height: 50px;
     background: rgb(240, 240, 240);
     box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
 }
 
-nav ul{
+nav ul {
     padding: 0;
     margin: 0;
     margin-right: 50px;
     float: none;
 }
 
-nav ul li{
-    background:rgb(240, 240, 240);
+nav ul li {
+    background: rgb(240, 240, 240);
     position: relative;
     list-style: none;
     display: inline-block;
     text-decoration: none;
 }
 
-nav ul li a{
+nav ul li a {
     display: block;
     padding: 0 15px;
     color: black;
@@ -131,17 +167,17 @@ nav ul li a{
     font-size: 18px;
 }
 
-nav ul li a:hover{
+nav ul li a:hover {
     background: rgb(180, 180, 180);
 }
 
-nav ul ul{
+nav ul ul {
     position: absolute;
     top: 50px;
     display: none;
 }
 
-nav ul li:hover > ul{
+nav ul li:hover > ul {
     display: block;
 }
 

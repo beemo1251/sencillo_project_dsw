@@ -1,0 +1,75 @@
+﻿@model IEnumerable<Sencillo_Project_DSW.Models.Pedido>
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/css/estilos-carrito.css" rel="stylesheet">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <title>SENCILLO | Cada vez más cerca</title>
+    <style>
+        body {
+            margin-top: 140px;
+        }
+    </style>
+</head>
+<body>
+    <div class="body__compra">
+        <div class="lista__productos">
+            <div class="alert-danger text-center p-3">@ViewBag.mensaje</div>
+            <h1>Mi Carrito</h1>
+            <hr />
+            <br />
+            @foreach (var item in Model)
+            {
+                <div class="item_lista">
+                    <div class="image_item">
+                        <img src="@Url.Content(string.Format("~/img/productos/{0}.jpg", item.id_producto))">
+                    </div>
+                    <div class="content_item">
+                        <div class="descripcion_prod">
+                            <div class="title_descripcion">
+                                <h1>@Html.DisplayFor(modelItem => item.descripcion)</h1>
+                                <span>@Html.DisplayFor(modelItem => item.medida)</span>
+                            </div>
+                            <div class="content_descripcion">
+                                <span>Precio: <b>S/. @Html.DisplayFor(modelItem => item.precio)</b></span>
+                                <span>Cantidad: <b>@Html.DisplayFor(modelItem => item.cantidad)</b></span>
+                                <span>Total: <b>S/. @Html.DisplayFor(modelItem => item.monto)</b></span>
+                            </div>
+                        </div>
+                        <div class="accion_item">
+                            <!--<button type="button" class="btn_editar">Quitar</button>-->
+                            @Html.ActionLink("Quitar", "Delete", new { id = item.id_producto }, new { @class="btn_delete"})
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+        <div class="resumen__compra">
+            <h2>RESUMEN DE COMPRA</h2>
+            <hr>
+            <div class="descripcion_compra">
+                <div class="text_compra">
+                    <span>Subtotal: </span><b>S/.@Model.Sum(m => m.monto)</b>
+                </div>
+                <div class="text_compra">
+                    <span>TOTAL: </span><b style="color: #e42958">S/.@Model.Sum(m => m.monto)</b>
+                </div>
+            </div>
+            <hr>
+            @using (Html.BeginForm("carrito", "Productos", FormMethod.Post))
+            {
+                <div class="accion_compra">
+                    @Html.Hidden("mns", "mensaje")
+                    <button type="submit" class="btn_pagar">Finalizar Compra</button>
+                    <!--<button type="button" class="btn_continuar">Continuar Comprando</button>-->
+                    @Html.ActionLink("Seguir comprando", "Index", null, new { @class = "btn_continuar" })
+                </div>
+            }
+        </div>
+    </div>
+</body>
+</html>
