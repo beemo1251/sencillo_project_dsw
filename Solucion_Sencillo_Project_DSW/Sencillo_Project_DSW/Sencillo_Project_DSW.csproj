@@ -209,6 +209,7 @@
     <Content Include="Views\Productos\Inicio.cshtml" />
     <Content Include="Views\Registro\Registro.cshtml" />
     <Content Include="Views\Productos\carrito.cshtml" />
+    <Content Include="Views\Productos\boleta.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -17,11 +17,14 @@ namespace Sencillo_Project_DSW.Controllers
 
         
 
-        IEnumerable<Producto> productos()
+        IEnumerable<Producto> productos(string desc = "")
         {
             List<Producto> temporal = new List<Producto>();
             SqlConnection cn = new SqlConnection(cadena);
-            SqlCommand cmd = new SqlCommand("SELECT * FROM tb_producto", cn);
+            SqlCommand cmd = new SqlCommand("sp_listar_prod", cn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@descrip", desc);
+
             cn.Open();
             SqlDataReader dr = cmd.ExecuteReader();
             while (dr.Read())
@@ -50,7 +53,7 @@ namespace Sencillo_Project_DSW.Controllers
                     StringComparison.CurrentCultureIgnoreCase)).ToList();
         }
 
-        public ActionResult Index(string nombre = null)
+        public ActionResult Index(string nombre = "", int p = 0, string flecha = "")
         {
             //para el  login
             ViewBag.usuario = InicioSesion();
@@ -62,8 +65,25 @@ namespace Sencillo_Project_DSW.Controllers
             }
 
             ViewBag.carrito = "carrito";
+
+            int f = 8;
+            int c = productos(nombre).Count();
+            int npags = c % f == 0 ? c / f : c / f + 1;
+
+            ViewBag.p = p;
+            ViewBag.npags = npags;
+
+            if (flecha == ">>")
+            {
+                ViewBag.p = p + 1;
+            }
+            else if (flecha == "<<")
+            {
+                ViewBag.p = p - 1;
+            }
+
             // SE ENVIA LA LISTA DE PRODUCTOS
-            return View(filtro(nombre));
+            return View(productos(nombre).Skip(p * f).Take(f));
         }
 
         Producto Buscar(int? id = null)
@@ -216,6 +236,7 @@ namespace Sencillo_Project_DSW.Controllers
         public ActionResult carrito()
         {
             ViewBag.usuario = InicioSesion();
+            // Session["boleta"] = new List<Pedido>();
 
             return View((List<Pedido>)Session["carrito"]);
         }
@@ -238,13 +259,29 @@ namespace Sencillo_Project_DSW.Controllers
                 return View((List<Pedido>)Session["carrito"]);
             }
 
-            //Session["login2"] = null;
+            Session["boleta"] = null;
+
+            Session["boleta"] = new List<Pedido>();
+
+            Session["boleta"] = (List<Pedido>)Session["carrito"];
+
+            // Session["login2"] = null;
             Session["carrito"] = null;
 
-            /*List<Pedido> temporal = (List<Pedido>)Session["carrito"];
-            Pedido reg = temporal.Find(i => i.id_producto == id);*/
+            return RedirectToAction("boleta");
+        }
 
-            return RedirectToAction("Index");
+        public ActionResult boleta()
+        {
+            // Session["boleta"] = new List<Pedido>();
+            Session["carrito"] = new List<Pedido>();
+
+            ViewBag.usuario = InicioSesion();
+
+            ViewBag.fecha = DateTime.Now.ToString("dd-MM-yyyy");
+            ViewBag.hora = DateTime.Now.ToString("hh:mm:ss");
+
+            return View((List<Pedido>)Session["boleta"]);
         }
     }
 }

@@ -58,6 +58,14 @@ where id_cliente = @idcli
 
 exec sp_registro_cliente '45678937','jose','estrada','jose@gmail.com','jose'
 
+create or alter proc sp_listar_prod
+@descrip varchar(200)
+as
+select * from tb_producto where descripcion like '%' + @descrip + '%'
+go
+
+exec sp_listar_prod 'c'
+
 
 
 

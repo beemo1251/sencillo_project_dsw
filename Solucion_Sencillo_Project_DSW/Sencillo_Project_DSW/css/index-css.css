@@ -46,10 +46,11 @@
     height: 40px;
     margin: auto;
     display: flex;
+    flex-direction: row;
 }
 
 .item_buscar .text_buscar {
-    width: 85%;
+    width: 70%;
     border: none;
     padding: 15px;
     font-size: 0.9rem;
@@ -57,21 +58,17 @@
 }
 
 .btn_buscar {
-    display: flex;
-    width: 15%;
-    border: none;
-    background: #ffff;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.2rem;
-    color: #c9c9c9;
-    text-decoration: none;
+    border: solid 2px #fff;
+    border-radius: 6px;
+    background-color: transparent;
+    padding: 10px;
+    color: #fff;
 }
 
 .btn_buscar:hover {
     cursor: pointer;
-    background-color: #dbdbdb;
-    color: #fff;
+    background-color: #fff;
+    color: #F0204C;
 }
 
 .item {
