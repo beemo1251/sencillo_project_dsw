@@ -14,12 +14,14 @@ namespace Sencillo_Project_DSW.Controllers
     public class ProductosController : Controller
     {
         string cadena = ConfigurationManager.ConnectionStrings["cn"].ConnectionString;
+
+        
+
         IEnumerable<Producto> productos()
         {
             List<Producto> temporal = new List<Producto>();
             SqlConnection cn = new SqlConnection(cadena);
-            SqlCommand cmd = new SqlCommand(
-            "SELECT id_producto, descripcion, marca, precio, stock, medida, estado, id_categoria FROM tb_producto", cn);
+            SqlCommand cmd = new SqlCommand("SELECT * FROM tb_producto", cn);
             cn.Open();
             SqlDataReader dr = cmd.ExecuteReader();
             while (dr.Read())
@@ -39,7 +41,16 @@ namespace Sencillo_Project_DSW.Controllers
             return temporal;
         }
 
-        public ActionResult Index()
+        IEnumerable<Producto> filtro(string nombre = null)
+        {
+            if (nombre == null)
+                return new List<Producto>();
+            else
+                return productos().Where(p => p.descripcion.StartsWith(nombre,
+                    StringComparison.CurrentCultureIgnoreCase)).ToList();
+        }
+
+        public ActionResult Index(string nombre = null)
         {
             //para el  login
             ViewBag.usuario = InicioSesion();
@@ -52,7 +63,7 @@ namespace Sencillo_Project_DSW.Controllers
 
             ViewBag.carrito = "carrito";
             // SE ENVIA LA LISTA DE PRODUCTOS
-            return View(productos());
+            return View(filtro(nombre));
         }
 
         Producto Buscar(int? id = null)

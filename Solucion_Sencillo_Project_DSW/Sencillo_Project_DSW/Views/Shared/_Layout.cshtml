@@ -17,6 +17,13 @@
                 </div>
                 <div class="navbar__1_item">
                     <div class="item_buscar">
+                        @using (Html.BeginForm())
+                        {
+                            @Html.TextBox("nombre")
+                            <button>Consulta</button>
+                        }
+
+
                         <input type="text" class="text_buscar" name="" id="" placeholder="Buscar productos por nombre...">
                         <a href="" class="fas fa-search btn_buscar"></a>
                     </div>

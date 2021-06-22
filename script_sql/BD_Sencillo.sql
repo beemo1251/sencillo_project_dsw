@@ -191,8 +191,8 @@ insert into tb_compra_producto (ruc_proveedor, id_producto, cantidad, fecha) val
 select * from tb_pedido
 go
 
-insert into tb_pedido (estado, id_producto, cantidad) values ('entregado', 5, 2)
-insert into tb_pedido (estado, id_producto, cantidad) values ('pendiente', 3, 2)
+insert into tb_pedido (estado, id_producto, cantidad) values ('1', 5, 2);
+insert into tb_pedido (estado, id_producto, cantidad) values ('0', 3, 2);
 
 select * from tb_boleta
 go
