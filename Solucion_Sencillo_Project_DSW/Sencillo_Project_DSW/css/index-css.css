@@ -11,7 +11,7 @@
 .navbar__1 {
     width: 100%;
     height: 100%;
-    background-color: #F0204C;
+    background-color: #b42ac9;
     display: grid;
     grid-template-columns: repeat(12, 2fr);
     grid-template-areas: ". card1 card1 . card2 card2 card2 . card3 . card4 .";
@@ -65,11 +65,11 @@
     color: #fff;
 }
 
-.btn_buscar:hover {
-    cursor: pointer;
-    background-color: #fff;
-    color: #F0204C;
-}
+    .btn_buscar:hover {
+        cursor: pointer;
+        background-color: #fff;
+        color: #b42ac9;
+    }
 
 .item {
     width: 100%;

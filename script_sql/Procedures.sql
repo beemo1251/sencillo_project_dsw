@@ -1,11 +1,5 @@
-use BD_sencillo_market
+use BD_market
 go
-
-
-
-
-
-
 
 -- procedure  para  el  login Paulo
 create  proc sp_logueo

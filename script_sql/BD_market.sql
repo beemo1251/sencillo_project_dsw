@@ -1,7 +1,7 @@
-create database BD_sencillo_market
+create database BD_market
 go
 
-use BD_sencillo_market
+use BD_market
 go
 
 create table tb_tipo_usuario
