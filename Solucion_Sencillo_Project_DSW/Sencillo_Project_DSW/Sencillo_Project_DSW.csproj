@@ -154,6 +154,7 @@
     <Content Include="img\index-img\banner-2.jpg" />
     <Content Include="img\index-img\carrito.png" />
     <Content Include="img\index-img\dropdwn.png" />
+    <Content Include="img\index-img\logo_fazzil.png" />
     <Content Include="img\index-img\sencillo.png" />
     <Content Include="img\index-img\user.png" />
     <Content Include="img\login.svg" />
