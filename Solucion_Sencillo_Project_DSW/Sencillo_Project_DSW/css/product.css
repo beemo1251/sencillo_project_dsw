@@ -522,21 +522,21 @@ Product Details
 }
 
 .add {
-  text-decoration: none;
-  flex: 0 0 47%;
-  display: inline-block;
-  padding: 1.6rem 3rem;
-  text-align: center;
-  color: var(--black);
-  border: 1px solid var(--black);
-  background: none;
+    text-decoration: none;
+    flex: 0 0 47%;
+    display: inline-block;
+    padding: 1.6rem 3rem;
+    text-align: center;
+    color: #054cec;
+    border: 1px solid #054cec;
+    background: none;
 }
 
-.add:hover {
-    text-decoration: none;
-    background: var(--black);
-    color: white;
-}
+    .add:hover {
+        text-decoration: none;
+        background: #054cec;
+        color: white;
+    }
 
 /*.product-details__btn svg {
   width: 1.9rem;
@@ -665,12 +665,12 @@ Product Details
 }
 
 .counter-btn {
-  width: 7rem;
-  margin: 0 0 0 1rem;
-  padding: 1rem 0;
-  text-align: center;
-  border: 1px solid var(--black);
-  border-radius: 10px;
+    width: 7rem;
+    margin: 0 0 0 1rem;
+    padding: 1rem 0;
+    text-align: center;
+    border: 1px solid #054cec;
+    border-radius: 10px;
 }
 
 .product__info a{

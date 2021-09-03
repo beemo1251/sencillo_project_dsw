@@ -37,7 +37,7 @@
             </div>
             <div class="card-footer">
                 <small class="text-muted">
-                    @Html.ActionLink("Detalle", "detailsProducto", new { id = item.idProducto })
+                    @Html.ActionLink("Detalle", "detailsProducto", new { id = item.idProducto, @class = "btn btn-primary" })
                 </small>
             </div>
         </div>
@@ -45,13 +45,13 @@
     }
 </div>
 <div class="text-center m-5">
-    @Html.ActionLink("|<", "Index", new { p = 0 }, new { @class = "btn btn-danger" })
+    @Html.ActionLink("|<", "Index", new { p = 0 }, new { @class = "btn btn-primary" })
 
-    @Html.ActionLink("<<", "Index", new { p = (int)ViewBag.p - 1 }, new { @class = "btn btn-danger" })
+    @Html.ActionLink("<<", "Index", new { p = (int)ViewBag.p - 1 }, new { @class = "btn btn-primary" })
 
     @Html.Label(" " + (int)ViewBag.p + " ")
 
-    @Html.ActionLink(">>", "Index", new { p = (int)ViewBag.p + 1 }, new { @class = "btn btn-danger" })
+    @Html.ActionLink(">>", "Index", new { p = (int)ViewBag.p + 1 }, new { @class = "btn btn-primary" })
 
-    @Html.ActionLink(">|", "Index", new { p = (int)ViewBag.npags - 1 }, new { @class = "btn btn-danger" })
+    @Html.ActionLink(">|", "Index", new { p = (int)ViewBag.npags - 1 }, new { @class = "btn btn-primary" })
 </div>

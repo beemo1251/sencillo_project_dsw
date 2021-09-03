@@ -19,7 +19,7 @@
 }
 
 .navbar__1 {
-    background-color: #F0204C;
+    background-color: #054cec;
 }
 
 .navbar__1_item {
@@ -50,7 +50,7 @@
 }
 
 .item_buscar .text_buscar {
-    width: 70%;
+    width: 200px;
     border: none;
     padding: 15px;
     font-size: 0.9rem;
